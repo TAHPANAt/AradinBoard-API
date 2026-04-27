@@ -1,0 +1,7 @@
+---
+- name: Setup AradinBoard Environment
+  hosts: localhost
+  tasks:
+    - name: Ensure environment is ready
+      debug:
+        msg: "Server is Ready for K8s Deployment!"

@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'aradinboard-api'
+    static_configs:
+      # ใช้ host.docker.internal เพื่อให้ Prometheus ใน Docker มองเห็น Mac ของเรา
+      - targets: ['host.docker.internal:8080'] 
+    metrics_path: '/healthz'

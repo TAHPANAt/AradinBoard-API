@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aradinboard-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aradinboard
+  template:
+    metadata:
+      labels:
+        app: aradinboard
+    spec:
+      containers:
+      - name: aradinboard
+        image: tahpanat/aradinboard:latest
+        ports:
+        - containerPort: 8080
